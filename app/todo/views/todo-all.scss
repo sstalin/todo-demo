@@ -1,0 +1,60 @@
+.todo-list {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+}
+
+.task {
+  padding: 15px;
+  border-bottom: 1px solid #BBB;
+  position: relative;
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
+  .task-label {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .item {
+    line-height: 2em;
+    position: relative;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .status-indicator {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      margin: auto 0;
+      border: none;
+    }
+
+    .status-indicator.in_progress::after {
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="lightcoral" stroke="#ededed" stroke-width="3"/></svg>');
+    }
+    .status-indicator.complete::after {
+      content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="lightgreen" stroke="#ededed" stroke-width="3"/></svg>');
+    }
+
+    .description {
+      margin-left: 15px;
+    }
+  }
+
+}
+
+.task:hover {
+  background-color: #f8f8f8;
+
+  .remove-icon, .remove-icon-small {
+    display: inline-block;
+  }
+}

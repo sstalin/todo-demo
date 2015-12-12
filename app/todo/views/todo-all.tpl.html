@@ -1,0 +1,36 @@
+<header>
+  <h2 class="text-center">Todo List</h2>
+  <hr/>
+  <form name="addToDoForm" class="view" ng-submit="vm.addToDo();">
+    <input type="text" name="userId" placeholder="User id" ng-model="userId" ng-pattern="/[1-9]/"/>
+    <input type="text" name="todoId" placeholder="Title" ng-model="title" ng-minlength="3" ng-maxlength="20"/>
+    <button class="btn-primary" type="submit">+Add</button>
+    <div class="todo-alert">
+       <span class="error" ng-if="addToDoForm.$error.pattern">User id must be a integer!</span>
+       <span class="error" ng-if="addToDoForm.$error.minlength || addToDoForm.$error.maxlength">Title should be 3-10 characters!</span>
+    </div>
+  </form>
+</header>
+
+<hr/>
+<ul class="todo-list">
+  <li class="task" ng-repeat="task in vm.todos track by $index">
+    <a ui-sref="todo({id:task.id})" ng-click="vm.handleClick(task);">
+      <header ng-style="vm.testCompleted(task);">
+        <span class="task-label">Todo Id: {{task.id}}</span>
+        <span> / User Id: {{task.userId}}</span>
+        <span class="status"></span>
+      </header>
+      <h5>Title: {{task.title}}</h5>
+      <h5>Items:</h5>
+      <ul class="list-no-bullet">
+        <li class="item" ng-repeat="item in task.items track by $index">
+          <span class="status-indicator complete" ng-if="item.completed"></span>
+          <span class="status-indicator in_progress" ng-if="!item.completed"></span>
+          <span class="description">{{item.title}}</span>
+        </li>
+      </ul>
+    </a>
+    <button class="remove-icon" ng-click="vm.removeToDo($index, $event);"></button>
+  </li>
+</ul>

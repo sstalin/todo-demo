@@ -1,0 +1,73 @@
+.list-no-bullet{
+  list-style: none;
+}
+
+.view{
+  padding: 15px;
+}
+
+.no-border{
+  border: none!important;
+}
+
+.todo-alert{
+  .error{
+    color:red;
+  }
+}
+
+.remove-icon, .remove-icon-small{
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  border:0;
+  transition: color 0.2s ease-out;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.remove-icon-small{
+  font-size: 20px;
+  width: 20px;
+  height: 2em;
+  float: right;
+  top: -6px;
+  right:0;
+}
+
+.remove-icon:hover, .remove-icon-small{
+  color: #af5b5e;
+}
+
+.remove-icon::after, .remove-icon-small::after{
+  content: 'x';
+}
+
+input[type="text"]{
+  display: inline;
+  vertical-align: middle;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #666666;
+  border-radius: 20px;
+  line-height: 24px;
+  padding: 0 10px;
+  color: #999;
+  margin: 0 auto;
+  outline: none;
+  -webkit-transition: all .7s ease 0s;
+  transition: all .7s ease 0s
+}
+
+.home-icon{
+  width: 40px;
+  height: auto;
+  top: 15px;
+  left: 15px;
+}

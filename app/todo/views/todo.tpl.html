@@ -1,0 +1,24 @@
+<div style="width:80%" class="center-block">
+  <a ui-sref="todos">
+    <img src="images/home.png" class="home-icon pull-left" alt=""/>
+  </a>
+  <h2 class="text-center">Todo Id: {{vm.todo.id}}</h2>
+  <h4 class="text-center"> User Id: {{vm.todo.userId}}</h4>
+  <br/>
+  <section class="task no-border edit-items">
+    <a ui-sref="edit({id:vm.todo.id})">
+      <h5>Items:</h5>
+      <ul class="list-no-bullet">
+        <li class="item" ng-repeat="item in vm.todo.items">
+          <span class="status-indicator complete" ng-if="item.completed"></span>
+          <span class="status-indicator in_progress" ng-if="!item.completed"></span>
+          <span class="description">{{item.title}}</span>
+        </li>
+      </ul>
+      <img src="images/edit-icon.png" alt="" class="edit-icon"/>
+    </a>
+  </section>
+</div>
+
+
+
