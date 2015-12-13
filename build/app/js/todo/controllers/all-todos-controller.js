@@ -31,7 +31,7 @@
         "title": "Default Title",
         "items": []
       };
-      var lastIndex = vm.todos.length - 1;
+      var lastIndex = (vm.todos.length > 0)? vm.todos.length - 1 : 0;
       var newId = vm.todos[lastIndex].id + 1;
 
       if ($scope.addToDoForm.$valid) {

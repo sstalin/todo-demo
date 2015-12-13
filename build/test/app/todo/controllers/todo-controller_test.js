@@ -14,4 +14,8 @@ describe('TodoCtrl', function () {
   it('should have ctrlName as TodoCtrl', function () {
     expect(ctrl).toBeDefined();
   });
+
+  it('it should have todo to be defined', function () {
+    expect(ctrl.todo).toBeDefined();
+  });
 });
