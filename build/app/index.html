@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en' data-ng-app='demo'>
+  <head>
+    <title>demo</title>
+    <meta name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes'>
+    <!-- inject:head:js -->
+    <!-- endinject -->
+    <!-- inject:html -->
+    <!-- endinject -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/todo/views/todo-all.css">
+    <link rel="stylesheet" href="css/todo/views/todo-edit.css">
+    <link rel="stylesheet" href="css/todo/views/todo.css">
+    <!-- endinject -->
+  </head>
+  <body>
+
+    <div data-ui-view>
+
+    </div>
+
+    <!-- bower:js -->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="vendor/underscore/underscore.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="js/todo/todo-module.js"></script>
+    <script src="js/todo/services/todo-api-service.js"></script>
+    <script src="js/todo/filters/validate-filter.js"></script>
+    <script src="js/todo/controllers/todo-edit-controller.js"></script>
+    <script src="js/todo/controllers/todo-controller.js"></script>
+    <script src="js/todo/controllers/all-todos-controller.js"></script>
+    <script src="js/todo/todo-routes.js"></script>
+    <script src="js/app-module.js"></script>
+    <script src="js/app-routes.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

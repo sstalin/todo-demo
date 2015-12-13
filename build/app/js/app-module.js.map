@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["app-module.js"],"sourcesContent":["(function () {\n  'use strict';\n\n  /* @ngdoc object\n   * @name demo\n   * @description\n   *\n   */\n  angular\n    .module('demo', [\n      'ui.router',\n      'todo'\n    ]);\n}());\n"],"file":"app-module.js","sourceRoot":"/source/"}
