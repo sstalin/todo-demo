@@ -3,10 +3,13 @@
     <a ui-sref="todos">
       <img src="images/home.png" class="home-icon pull-left" alt=""/>
     </a>
+
     <h2 class="text-center">Id: {{vm.todo.id}} item list</h2>
     <br/>
+
     <form name="addItemForm" class="view" ng-submit="vm.addItem();">
-      <input class="title-input" type="text" name="item" placeholder="What needs to be done?" ng-model="title" required/>
+      <input class="title-input" type="text" name="item" placeholder="What needs to be done?" ng-model="title"
+             required/>
     </form>
   </header>
   <section class="task">
@@ -15,8 +18,16 @@
       <li class="item" ng-repeat="item in vm.todo.items">
         <button class="remove-icon-small" ng-click="vm.removeItem($index);"></button>
         <input style="margin-right: 10px" type="checkbox" ng-model="item.completed"/>
-        <span class="status-indicator complete" ng-if="item.completed"></span>
-        <span class="status-indicator in_progress" ng-if="!item.completed"></span>
+          <span class="status-indicator" ng-if="item.completed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+              <circle cx="50" cy="50" r="50" fill="lightgreen" stroke="#ededed" stroke-width="3"/>
+            </svg>
+          </span>
+          <span class="status-indicator" ng-if="!item.completed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+                  <circle cx="50" cy="50" r="50" fill="lightcoral" stroke="#ededed" stroke-width="3"/>
+                </svg>
+          </span>
         <span class="description">{{item.title}}</span>
       </li>
     </ul>

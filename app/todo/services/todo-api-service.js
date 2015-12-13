@@ -16,7 +16,7 @@
 
   function TodoApi($http) {
     var self = this;
-    var URL = "todo/data/todos.json";
+    var URL = "data/todos.json";
     var activeTodo = {};
     var activeId = null;
     var allToDo = [];

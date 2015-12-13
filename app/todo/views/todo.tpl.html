@@ -2,6 +2,7 @@
   <a ui-sref="todos">
     <img src="images/home.png" class="home-icon pull-left" alt=""/>
   </a>
+
   <h2 class="text-center">Todo Id: {{vm.todo.id}}</h2>
   <h4 class="text-center"> User Id: {{vm.todo.userId}}</h4>
   <br/>
@@ -10,8 +11,16 @@
       <h5>Items:</h5>
       <ul class="list-no-bullet">
         <li class="item" ng-repeat="item in vm.todo.items">
-          <span class="status-indicator complete" ng-if="item.completed"></span>
-          <span class="status-indicator in_progress" ng-if="!item.completed"></span>
+          <span class="status-indicator" ng-if="item.completed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+              <circle cx="50" cy="50" r="50" fill="lightgreen" stroke="#ededed" stroke-width="3"/>
+            </svg>
+          </span>
+          <span class="status-indicator" ng-if="!item.completed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+                  <circle cx="50" cy="50" r="50" fill="lightcoral" stroke="#ededed" stroke-width="3"/>
+                </svg>
+          </span>
           <span class="description">{{item.title}}</span>
         </li>
       </ul>

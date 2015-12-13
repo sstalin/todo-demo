@@ -1,3 +1,13 @@
+<style type="text/css">
+  .status-indicator.in_progress::after {
+    content: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="lightcoral" stroke="#ededed" stroke-width="3"/></svg>';
+  }
+
+  .status-indicator.complete::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="lightgreen" stroke="#ededed" stroke-width="3"/></svg>');
+  }
+</style>
+
 <header>
   <h2 class="text-center">Todo List</h2>
   <hr/>
@@ -6,8 +16,8 @@
     <input type="text" name="todoId" placeholder="Title" ng-model="title" ng-minlength="3" ng-maxlength="20"/>
     <button class="btn-primary" type="submit">+Add</button>
     <div class="todo-alert">
-       <span class="error" ng-if="addToDoForm.$error.pattern">User id must be a integer!</span>
-       <span class="error" ng-if="addToDoForm.$error.minlength || addToDoForm.$error.maxlength">Title should be 3-10 characters!</span>
+      <span class="error" ng-if="addToDoForm.$error.pattern">User id must be a integer!</span>
+      <span class="error" ng-if="addToDoForm.$error.minlength || addToDoForm.$error.maxlength">Title should be 3-10 characters!</span>
     </div>
   </form>
 </header>
@@ -25,8 +35,16 @@
       <h5>Items:</h5>
       <ul class="list-no-bullet">
         <li class="item" ng-repeat="item in task.items track by $index">
-          <span class="status-indicator complete" ng-if="item.completed"></span>
-          <span class="status-indicator in_progress" ng-if="!item.completed"></span>
+          <span class="status-indicator" ng-if="item.completed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+              <circle cx="50" cy="50" r="50" fill="lightgreen" stroke="#ededed" stroke-width="3"/>
+            </svg>
+          </span>
+          <span class="status-indicator" ng-if="!item.completed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="-10 -18 100 135">
+                  <circle cx="50" cy="50" r="50" fill="lightcoral" stroke="#ededed" stroke-width="3"/>
+                </svg>
+          </span>
           <span class="description">{{item.title}}</span>
         </li>
       </ul>

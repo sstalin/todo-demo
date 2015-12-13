@@ -1,4 +1,4 @@
-# demp
+# ToDo app based on AngularJS
 
 *Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.11.3) version 0.11.3*
 
@@ -19,3 +19,6 @@
 - Run `gulp e2eTest` to run e2e tests via Protractor
  - **A localhost must be running** - `gulp dev`
 
+
+### Demo
+http://sstalin.github.io/todo-demo/dist/index.html

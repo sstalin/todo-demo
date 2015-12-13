@@ -2,7 +2,7 @@
   'use strict';
 
   /* @ngdoc object
-   * @name demp
+   * @name demo
    * @description
    *
    */
