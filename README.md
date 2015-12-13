@@ -21,4 +21,4 @@
 
 
 ### Demo
-http://sstalin.github.io/todo-demo/dist/index.html
+http://sstalin.github.io/todo-demo/build/app/index.html
