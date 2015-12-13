@@ -7,10 +7,11 @@ describe('TodoCtrl', function () {
   beforeEach(module('todo'));
 
   beforeEach(inject(function ($rootScope, $controller) {
-    ctrl = $controller('TodoCtrl');
+    var scope = $rootScope.$new();
+    ctrl = $controller('TodoCtrl', {$scope:scope});
   }));
 
   it('should have ctrlName as TodoCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('TodoCtrl');
+    expect(ctrl).toBeDefined();
   });
 });

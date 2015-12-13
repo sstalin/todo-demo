@@ -7,7 +7,8 @@ describe('TodoEditCtrl', function () {
   beforeEach(module('todo'));
 
   beforeEach(inject(function ($rootScope, $controller) {
-    ctrl = $controller('TodoEditCtrl');
+    var scope = $rootScope.$new();
+    ctrl = $controller('TodoEditCtrl', {$scope:scope});
   }));
 
   it('should have ctrlName as TodoEditCtrl', function () {

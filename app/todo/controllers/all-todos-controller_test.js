@@ -7,10 +7,11 @@ describe('AllTodosCtrl', function () {
   beforeEach(module('todo'));
 
   beforeEach(inject(function ($rootScope, $controller) {
-    ctrl = $controller('AllTodosCtrl');
+    var scope = $rootScope.$new();
+    ctrl = $controller('AllTodosCtrl', {$scope: scope});
   }));
 
-  it('should have ctrlName as AllTodosCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('AllTodosCtrl');
+  it('should AllTodosCtrl to be defined', function () {
+    expect(ctrl).toBeDefined();
   });
 });
